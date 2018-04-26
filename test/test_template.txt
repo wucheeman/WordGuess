@@ -11,11 +11,30 @@ Make sure you're working in a copy of this for a homework assignment!
 
 Requirements
 ============
-Fill in from requirements
+[] Use inquirer.js for user input
+[] App has file letter.js containing a constructor, Letter.
+  () Constructor has no dependencies
+  () Constructor displays an alphabetic character or an underscore, depending on whether or not the user has guessed the letter.
+  () Constructor defines a string value to store the underlying character for the letter
+  () Constructor defines boolean value that stores whether that letter has been guessed yet
+  () Constructor defines method that returns the underlying character if the letter has been guessed, or underscore) if not
+  () Constructor defines method that takes a character as an argument and checks it against the underlying character, updating the stored boolean value to true if guessed correctly
+[] App has file word.js containing a constructor, Word.
+  () Constructor depends on letter.js and nothing else
+  () Constructor creates an object representing the word the user is to guess. 
+  () Constructor defines an array of Letter objects representing the letters of the word
+  () Constructor defines a method that returns a string representing the word.
+  () This method calls each letter object's method that displays the character or an underscore and concatenates the response.
+  () Constructor defines a method that takes a character as an argument and calls the letter object's method for guessing the value on each letter object
+[] App has file index.js containing the logic for the course of the game.
+  () Logic depends on word.js and nothing else
+  () Logic randomly selects a word and uses the `Word` constructor to store it
+  () Logic prompts the user for each guess and keeps track of the user's remaining guesses
+
 
 Bonus
 =====
-Fill in from requirements.
+None
 
 Functionality
 =============
@@ -24,11 +43,12 @@ Functionality
 
 Display
 =======
-[] Page closely resembles demo video
+[] Page closely resembles demo gif
 
 Installation
 ============
 [] Package installs correctly in a new directory
+[] package.json correctly reflects app dependencies
 
 Cleanup
 =======

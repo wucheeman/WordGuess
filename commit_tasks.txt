@@ -1,0 +1,3 @@
+[] initial commit of javascript files
+[] first-pass pseudo code
+[] 

@@ -3,7 +3,7 @@ const Letter = function(letter) {
   this.letter = letter;
   this.placeholder = '_';
   this.guessed = false;
-  this.getLetter = function() {
+  this.getDisplayLetter = function() {
     if (this.guessed) {
       return this.letter;
     }

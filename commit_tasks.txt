@@ -1,6 +1,6 @@
 [x] initial commit of javascript files
 [x] complete work on Letter and unittest
-[] 
+[x] pseudocode for Word and initial unittest
 []
 [] complete work on Word and unittest
 []

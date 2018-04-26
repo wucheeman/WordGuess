@@ -1,3 +1,10 @@
-[] initial commit of javascript files
-[] first-pass pseudo code
+[x] initial commit of javascript files
+[x] complete work on Letter and unittest
 [] 
+[]
+[] complete work on Word and unittest
+[]
+[] display word on screen
+[] complete non-user input work on index.js and unittest
+[] dialog for user input
+[] validate/normalize user input

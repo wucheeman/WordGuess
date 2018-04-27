@@ -25,6 +25,15 @@ const Word = function(word) {
   }; 
   this.checkUserGuess = function(letter) {
     // checks user guess using each Letter
+    let outcome = false;
+    for (let letterObject of this.letterArray) {
+      if (letterObject.letter === letter.letter) {
+        letterObject.guessed = true;
+        outcome = true
+      }
+    }
+    return outcome;
   };
+  this.makeLetterArray();
 }
 module.exports = Word;

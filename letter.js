@@ -1,3 +1,5 @@
+// @ts-check
+// This turns on type checking in VS Code
 
 const Letter = function(letter) {
   this.letter = letter;

@@ -10,26 +10,29 @@ const Letter = require('./letter.js');
 const Word = function(word) {
   this.word = word; // not sure if this is needed
   this.letterArray = [];
+  this.currentDisplayState = '';
   this.makeLetterArray = function() {
     // creates array of Letter objects matching word
     for (let letter of this.word) {
       let letterObj = new Letter(letter);
       this.letterArray.push(letterObj);
     }
+    this.updateDisplayState();
   };
-    this.getWord = function() {
-    // calls each letter object's getDisplayLetter() and concatenates the response.
+  this.updateDisplayState = function() {
+    this.currentDisplayState = '';
+    for (let letterObject of this.letterArray) {
+      this.currentDisplayState = this.currentDisplayState +
+                                 letterObject.getDisplayLetter() + ' ';
+    }
   };
-  this.displayStateOfGame = function() {
-    // returns concatentated response from this.getWord
-  }; 
   this.checkUserGuess = function(letter) {
-    // checks user guess using each Letter
     let outcome = false;
     for (let letterObject of this.letterArray) {
       if (letterObject.letter === letter.letter) {
         letterObject.guessed = true;
-        outcome = true
+        outcome = true;
+        this.updateDisplayState();
       }
     }
     return outcome;

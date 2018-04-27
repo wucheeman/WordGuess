@@ -2,9 +2,8 @@
 [x] complete work on Letter and unittest
 [x] pseudocode for Word and initial unittest
 [x] complete Word.makeLetterArray() and unittest
-[] complete Word.checkUserGuess() and unittest
-[] complete Word.getWord() and unittest
-[] complete work on Word and unittest
+[x] complete Word.checkUserGuess() and unittest
+[x] complete Word.updateDisplayState() and unittest; completes work on Word
 [] pseudocode for index.js and initial unittest
 []
 [] display word on screen

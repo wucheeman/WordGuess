@@ -1,8 +1,11 @@
 [x] initial commit of javascript files
 [x] complete work on Letter and unittest
 [x] pseudocode for Word and initial unittest
-[]
+[x] complete Word.makeLetterArray() and unittest
+[] complete Word.checkUserGuess() and unittest
+[] complete Word.getWord() and unittest
 [] complete work on Word and unittest
+[] pseudocode for index.js and initial unittest
 []
 [] display word on screen
 [] complete non-user input work on index.js and unittest

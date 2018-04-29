@@ -23,9 +23,6 @@ const Game = function(dictionary) {
   };
   this.playGame = function() {
     // main loop of the game
-    // RESUME: As written, inquirer prompts and then game goes into an infinite loop immediately
-    // comment out everything in .then and below except logging input and numGuesses
-    // if that is working, build out from there
     const that = this;
     if (!this.gameOver ) {
       inquirer

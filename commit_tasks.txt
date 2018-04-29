@@ -5,8 +5,8 @@
 [x] complete Word.checkUserGuess() and unittest
 [x] complete Word.updateDisplayState() and unittest; completes work on Word
 [x] pseudocode for index.js
-[]
-[] display word on screen
-[] complete non-user input work on index.js and unittest
-[] dialog for user input
+[x] initial dialog for user input
+[] display hard coded word on screen
+[] complete logic in Game and unittest
+[] 
 [] validate/normalize user input

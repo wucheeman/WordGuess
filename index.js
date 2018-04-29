@@ -3,7 +3,7 @@
 
 // require inpuirer
 const inquirer = require('inquirer');
-// require Word
+const wordMaker = require('./word.js');
 // npm install random-words - package generating a random word
 
 // Create dictionary
@@ -12,19 +12,22 @@ const inquirer = require('inquirer');
 // console.log(randomWords());
 const dictionary = ['cat'];
 
-const Game = function(dictionary) {
+const Game = function(dictionary) { // remove dictionary as argument?
   this.dictionary = dictionary;
-  this.word = this.dictionary[0]; // TODO make this a random pick from dictionary
-  this.numGuesses = 5;
+  this.word = {};
+  this.numGuesses = 1; // increase for testing; set to 10 for game?
   this.gameOver = false;
-  this.updateDisplay = function() {
-    // updates display after each letter has been guessed
-    // TODO
-  };
+  this.makeWordObject = function() {
+    // makes an object using Word for this round of the game
+    // TODO make this a random pick
+    this.word = new wordMaker(dictionary[0]);
+    console.log(this.word);
+  }
   this.playGame = function() {
     // main loop of the game
-    const that = this;
+    const that = this; // TODO: use a less smelly fix to the scope issue
     if (!this.gameOver ) {
+      console.log(' ' + this.word.currentDisplayState);
       inquirer
       .prompt([{
         type: 'input',
@@ -50,10 +53,16 @@ const Game = function(dictionary) {
 //      };
       });
     }; // end of if loop
-  }; // end of playGame()
+  }; // end of playGame method
+  this.updateDisplay = function() {
+    // updates display after each letter has been guessed
+    console.log('this.word');
+  };
+  this.makeWordObject();
 } // end of Game
 
-const game = new Game(dictionary);
+const game = new Game(dictionary); // remove dictionary as argument
+game.makeWordObject();
 game.playGame();
 
 

@@ -6,7 +6,10 @@
 [x] complete Word.updateDisplayState() and unittest; completes work on Word
 [x] pseudocode for index.js
 [x] initial dialog for user input
-[] display hard coded word on screen
-[] complete logic in Game and unittest
-[] 
+[x] create word object with hard coded word and make initial display on screen
+[] update screen with correct guesses
+[] complete logic in Game with hard coded word
+[] generate random word
 [] validate/normalize user input
+[] complete all work on index.js
+[] update after test

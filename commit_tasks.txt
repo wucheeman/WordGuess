@@ -4,7 +4,7 @@
 [x] complete Word.makeLetterArray() and unittest
 [x] complete Word.checkUserGuess() and unittest
 [x] complete Word.updateDisplayState() and unittest; completes work on Word
-[] pseudocode for index.js and initial unittest
+[x] pseudocode for index.js
 []
 [] display word on screen
 [] complete non-user input work on index.js and unittest

@@ -39,8 +39,15 @@ const Game = function(dictionary) { // remove dictionary as argument?
         guess = that.validateAndNormalize(guess);
         if (!guess) {
           console.log('Please input a single letter only');
-          // TODO count an invalid guess - how does impact ending game?
-          that.playGame();  // go around again
+          // TODO: refactor; not DRY
+          that.numGuesses--;
+          console.log(that.numGuesses);
+          if (that.numGuesses === 0) {
+            console.log('Sorry, you have run out of guesses!');
+            that.gameOver = true;
+          } else {
+            that.playGame(); // recursion
+          }
         } else {
           const guessOutcome = that.word.checkUserGuess(guess);
           console.log(guessOutcome);

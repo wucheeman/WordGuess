@@ -16,7 +16,7 @@
    (x) Game accepts and normalizes capital letters
    (x) rejects input with multiple characters 
    (x) rejects input with non-alphabetic characters
-[] Game counts invalid input as an incorrect game and ends game when appropriate
+[x] Game counts invalid input as an incorrect game and ends when appropriate
 [] clean up logs
 TEST with different hard coded word
 [] generate random word

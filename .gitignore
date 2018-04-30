@@ -4,6 +4,7 @@
 snippets/
 target/
 node_modules/
+words.txt
 
 # Executables
 

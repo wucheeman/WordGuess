@@ -17,6 +17,7 @@
    (x) rejects input with multiple characters 
    (x) rejects input with non-alphabetic characters
 [x] Game counts invalid input as an incorrect game and ends when appropriate
+[x] Refactor bad guess/game loss code into separate method
 [] clean up logs
 TEST with different hard coded word
 [] generate random word

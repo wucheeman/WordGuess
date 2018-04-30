@@ -40,14 +40,15 @@ const Game = function(dictionary) { // remove dictionary as argument?
         if (!guess) {
           console.log('Please input a single letter only');
           // TODO: refactor; not DRY
-          that.numGuesses--;
-          console.log(that.numGuesses);
-          if (that.numGuesses === 0) {
-            console.log('Sorry, you have run out of guesses!');
-            that.gameOver = true;
-          } else {
-            that.playGame(); // recursion
-          }
+          that.updateAfterBadGuess();
+          // that.numGuesses--;
+          // console.log(that.numGuesses);
+          // if (that.numGuesses === 0) {
+          //   console.log('Sorry, you have run out of guesses!');
+          //   that.gameOver = true;
+          // } else {
+          //   that.playGame(); // recursion
+          // }
         } else {
           const guessOutcome = that.word.checkUserGuess(guess);
           console.log(guessOutcome);
@@ -57,21 +58,34 @@ const Game = function(dictionary) { // remove dictionary as argument?
               console.log(' ' + that.word.currentDisplayState);
               console.log("Congrats! You've guessed the word!");
               that.gameOver = true;
+            } else {
+              that.playGame(); // recursion
             }
           } else {
-            that.numGuesses--;
-            console.log(that.numGuesses);
+            that.updateAfterBadGuess();
+            // that.numGuesses--;
+            // console.log(that.numGuesses);
           }
-          if (that.numGuesses === 0) {
-              console.log('Sorry, you have run out of guesses!');
-              that.gameOver = true;
-          } else {
-            that.playGame(); // recursion
-          }
+          // if (that.numGuesses === 0) {
+          //     console.log('Sorry, you have run out of guesses!');
+          //     that.gameOver = true;
+          // } else {
+          //   that.playGame(); // recursion
+          // }
         } // end of else input is valid processing loop KEEP
       }); // end of .then callback
     } // end of if game not over loop
   }; // end of playGame method
+  this.updateAfterBadGuess = function() {
+    this.numGuesses--;
+    console.log(this.numGuesses);
+    if (this.numGuesses === 0) {
+      console.log('Sorry, you have run out of guesses!');
+      this.gameOver = true;
+    } else {
+      this.playGame(); // recursion
+    }
+  };
   this.validateAndNormalize = function(guess) {
     // rejects multiple characters
     const alphabet = /[a-z]/;

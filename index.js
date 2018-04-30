@@ -38,6 +38,7 @@ const Game = function(dictionary) { // remove dictionary as argument?
         const guess = inquirerResponse.guess.trim();
         // need to validate and normalize user guess
         // TODO: this is causing the game to loop infinitely, fix
+        // put validation into Word?
         // if (!letter) {
         //   // ask again
         // } else {
@@ -45,13 +46,18 @@ const Game = function(dictionary) { // remove dictionary as argument?
           console.log(guessOutcome);
           if (guessOutcome) {
             that.word.updateDisplayState();
+            if (that.word.checkIfFullyGuessed()) {
+              console.log(' ' + this.word.currentDisplayState);
+              console.log("Congrats! You've guessed the word!");
+              that.gameOver = true;
+            }
           } else {
             that.numGuesses--;
             console.log(that.numGuesses);
           }
           if (that.numGuesses === 0) {
               console.log('Sorry, you have run out of guesses!');
-              that.gameOver = true
+              that.gameOver = true;
           } else {
             that.playGame(); // recursion
           }

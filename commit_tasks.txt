@@ -9,8 +9,8 @@
 [x] create word object with hard coded word and make initial display on screen
 [x] update screen with correct guesses
 [x] update Word to determine if it has been guessed and unittest
-[] complete logic in Game with hard coded word 
-   () declare end of game when won
+[x] complete logic in Game with hard coded word 
+   (x) declare end of game when won
 [] clean up logs and test with different hard coded word
 [] generate random word
 [] validate/normalize user input

@@ -39,16 +39,7 @@ const Game = function(dictionary) { // remove dictionary as argument?
         guess = that.validateAndNormalize(guess);
         if (!guess) {
           console.log('Please input a single letter only');
-          // TODO: refactor; not DRY
           that.updateAfterBadGuess();
-          // that.numGuesses--;
-          // console.log(that.numGuesses);
-          // if (that.numGuesses === 0) {
-          //   console.log('Sorry, you have run out of guesses!');
-          //   that.gameOver = true;
-          // } else {
-          //   that.playGame(); // recursion
-          // }
         } else {
           const guessOutcome = that.word.checkUserGuess(guess);
           console.log(guessOutcome);
@@ -63,15 +54,7 @@ const Game = function(dictionary) { // remove dictionary as argument?
             }
           } else {
             that.updateAfterBadGuess();
-            // that.numGuesses--;
-            // console.log(that.numGuesses);
           }
-          // if (that.numGuesses === 0) {
-          //     console.log('Sorry, you have run out of guesses!');
-          //     that.gameOver = true;
-          // } else {
-          //   that.playGame(); // recursion
-          // }
         } // end of else input is valid processing loop KEEP
       }); // end of .then callback
     } // end of if game not over loop

@@ -15,7 +15,7 @@ const dictionary = ['cat'];
 const Game = function(dictionary) { // remove dictionary as argument?
   this.dictionary = dictionary;
   this.word = {};
-  this.numGuesses = 1; // increase for testing; set to 10 for game?
+  this.numGuesses = 3; // increase for testing; set to 10 for game?
   this.gameOver = false;
   this.makeWordObject = function() {
     // makes an object using Word for this round of the game
@@ -32,25 +32,30 @@ const Game = function(dictionary) { // remove dictionary as argument?
       .prompt([{
         type: 'input',
         message: 'Guess a letter please',
-        name: 'letter'
+        name: 'guess'
       }])
       .then(function(inquirerResponse) {
-        const letter = inquirerResponse.letter.trim();
-        // need to validate and normalize user input
+        const guess = inquirerResponse.guess.trim();
+        // need to validate and normalize user guess
         // TODO: this is causing the game to loop infinitely, fix
         // if (!letter) {
         //   // ask again
         // } else {
-          // TODO: build required functionality to replace this scaffolding
-          that.numGuesses--;
-          console.log(letter, that.numGuesses);
+          const guessOutcome = that.word.checkUserGuess(guess);
+          console.log(guessOutcome);
+          if (guessOutcome) {
+            that.word.updateDisplayState();
+          } else {
+            that.numGuesses--;
+            console.log(that.numGuesses);
+          }
           if (that.numGuesses === 0) {
-            console.log('Sorry, you have run out of guesses!');
-            that.gameOver = true
+              console.log('Sorry, you have run out of guesses!');
+              that.gameOver = true
           } else {
             that.playGame(); // recursion
           }
-//      };
+//      }; end of commented-out if... else delete?
       });
     }; // end of if loop
   }; // end of playGame method

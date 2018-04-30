@@ -29,10 +29,12 @@ const Word = function(word) {
   this.checkUserGuess = function(letter) {
     let outcome = false;
     for (let letterObject of this.letterArray) {
-      if (letterObject.letter === letter.letter) {
+      // console.log('letter is ' + letter + "letterObject.letter is " + letterObject.letter);
+      if (letterObject.letter === letter) {
         letterObject.guessed = true;
         outcome = true;
         this.updateDisplayState();
+        return outcome;
       }
     }
     return outcome;

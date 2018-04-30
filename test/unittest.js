@@ -43,55 +43,76 @@ console.log("Expected: c, a, t; actual: " +
              mysteryWord.letterArray[2].letter );
 console.log('');
 
-console.log('Calling mysteryWord.checkUserGuess(a)');
-const testLetterOne = new Letter('a');
-console.log("Expected: true; actual: " + mysteryWord.checkUserGuess(testLetterOne));
-console.log('Calling mysteryWord.checkUserGuess(z)');
-const testLetterTwo = new Letter('z')
-console.log("Expected: false; actual: " + mysteryWord.checkUserGuess(testLetterTwo));
+// console.log('Calling mysteryWord.checkUserGuess(a)');
+// const testLetterOne = new Letter('a');
+// console.log("Expected: true; actual: " + mysteryWord.checkUserGuess(testLetterOne));
+// console.log('Calling mysteryWord.checkUserGuess(z)');
+// const testLetterTwo = new Letter('z')
+// console.log("Expected: false; actual: " + mysteryWord.checkUserGuess(testLetterTwo));
+// console.log('');
+
+// console.log('Testing for word with two of the same letter');
+// const doubleEWord = new Word ('evidence');
+// console.log(doubleEWord);
+// const testLetterThree = new Letter('e')
+// console.log("Expected: true; actual: " + doubleEWord.checkUserGuess(testLetterThree));
+// console.log('');
+
+// console.log('Testing mysteryWord.getWord(c)');
+// const letterC = new Letter('c');
+// mysteryWord.checkUserGuess(letterC);
+// console.log("Expected: c _ _ ; actual: " +  mysteryWord.currentDisplayState);
+// console.log('Testing mysteryWord.getWord(t)');
+// const letterT = new Letter('t');
+// mysteryWord.checkUserGuess(letterT);
+// console.log("Expected: c _ t ; actual: " +  mysteryWord.currentDisplayState);
+// const letterA = new Letter('a');
+// mysteryWord.checkUserGuess(letterA);
+// console.log("Expected: c a t ; actual: " +  mysteryWord.currentDisplayState);
+// console.log("");
+
+// console.log('Testing again for word with two of the same letter');
+// console.log("Testing starting display state: " +  doubleEWord.currentDisplayState);
+// doubleEWord.checkUserGuess(letterC);
+// console.log("Guessing letter c: " +  doubleEWord.currentDisplayState);
+// const letterE = new Letter('e');
+// doubleEWord.checkUserGuess(letterE);
+// console.log("Guessing letter e: " +  doubleEWord.currentDisplayState);
+// mysteryWord.checkUserGuess(letterT);
+// console.log("Guessing letter t: " +  doubleEWord.currentDisplayState);
+// mysteryWord.checkUserGuess(letterA);
+// console.log("Guessing letter a: " +  doubleEWord.currentDisplayState);
+// const letterN = new Letter('n');
+// doubleEWord.checkUserGuess(letterN);
+// console.log("Guessing letter n: " +  doubleEWord.currentDisplayState);
+// const letterV = new Letter('v');
+// doubleEWord.checkUserGuess(letterV);
+// console.log("Guessing letter v: " +  doubleEWord.currentDisplayState);
+// const letterI = new Letter('i');
+// doubleEWord.checkUserGuess(letterI);
+// console.log("Guessing letter i: " +  doubleEWord.currentDisplayState);
+// const letterD = new Letter('d');
+// doubleEWord.checkUserGuess(letterD);
+// console.log("Guessing letter d: " +  doubleEWord.currentDisplayState);
+// console.log('');
+
+console.log('Setting up test of checkIfFullyGuessed');
+mysteryWord.letterArray[0].guessed = false;
+mysteryWord.letterArray[1].guessed = false;
+mysteryWord.letterArray[2].guessed = true;
+console.log("Expected: false; actual: " + mysteryWord.checkIfFullyGuessed());
 console.log('');
 
-console.log('Testing for word with two of the same letter');
-const doubleEWord = new Word ('evidence');
-console.log(doubleEWord);
-const testLetterThree = new Letter('e')
-console.log("Expected: true; actual: " + doubleEWord.checkUserGuess(testLetterThree));
+console.log('Setting up 2nd test of checkIfFullyGuessed');
+mysteryWord.letterArray[0].guessed = true;
+mysteryWord.letterArray[1].guessed = false;
+mysteryWord.letterArray[2].guessed = true;
+console.log("Expected: false; actual: " + mysteryWord.checkIfFullyGuessed());
 console.log('');
 
-console.log('Testing mysteryWord.getWord(c)');
-const letterC = new Letter('c');
-mysteryWord.checkUserGuess(letterC);
-console.log("Expected: c _ _ ; actual: " +  mysteryWord.currentDisplayState);
-console.log('Testing mysteryWord.getWord(t)');
-const letterT = new Letter('t');
-mysteryWord.checkUserGuess(letterT);
-console.log("Expected: c _ t ; actual: " +  mysteryWord.currentDisplayState);
-const letterA = new Letter('a');
-mysteryWord.checkUserGuess(letterA);
-console.log("Expected: c a t ; actual: " +  mysteryWord.currentDisplayState);
-console.log("");
-
-console.log('Testing again for word with two of the same letter');
-console.log("Testing starting display state: " +  doubleEWord.currentDisplayState);
-doubleEWord.checkUserGuess(letterC);
-console.log("Guessing letter c: " +  doubleEWord.currentDisplayState);
-const letterE = new Letter('e');
-doubleEWord.checkUserGuess(letterE);
-console.log("Guessing letter e: " +  doubleEWord.currentDisplayState);
-mysteryWord.checkUserGuess(letterT);
-console.log("Guessing letter t: " +  doubleEWord.currentDisplayState);
-mysteryWord.checkUserGuess(letterA);
-console.log("Guessing letter a: " +  doubleEWord.currentDisplayState);
-const letterN = new Letter('n');
-doubleEWord.checkUserGuess(letterN);
-console.log("Guessing letter n: " +  doubleEWord.currentDisplayState);
-const letterV = new Letter('v');
-doubleEWord.checkUserGuess(letterV);
-console.log("Guessing letter v: " +  doubleEWord.currentDisplayState);
-const letterI = new Letter('i');
-doubleEWord.checkUserGuess(letterI);
-console.log("Guessing letter i: " +  doubleEWord.currentDisplayState);
-const letterD = new Letter('d');
-doubleEWord.checkUserGuess(letterD);
-console.log("Guessing letter d: " +  doubleEWord.currentDisplayState);
+console.log('Setting up 3rd test of checkIfFullyGuessed');
+mysteryWord.letterArray[0].guessed = true;
+mysteryWord.letterArray[1].guessed = true;
+mysteryWord.letterArray[2].guessed = true;
+console.log("Expected: true; actual: " + mysteryWord.checkIfFullyGuessed());
 console.log('');

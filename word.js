@@ -11,6 +11,7 @@ const Word = function(word) {
   this.word = word; // not sure if this is needed
   this.letterArray = [];
   this.currentDisplayState = '';
+  this.guessed = false;
   this.makeLetterArray = function() {
     // creates array of Letter objects matching word
     for (let letter of this.word) {
@@ -38,6 +39,14 @@ const Word = function(word) {
       }
     }
     return outcome;
+  };
+  this.checkIfFullyGuessed = function() {
+    for (let letterObject of this.letterArray) {
+      if (letterObject.guessed !== true) {
+        return false;
+      }
+    }
+    return true;
   };
   this.makeLetterArray();
 }

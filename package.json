@@ -19,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/wucheeman/WordGuess/issues"
   },
-  "homepage": "https://github.com/wucheeman/WordGuess#readme"
+  "homepage": "https://github.com/wucheeman/WordGuess#readme",
+  "dependencies": {}
 }

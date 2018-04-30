@@ -40,6 +40,14 @@ Functionality
 =============
 [] Game initializes globals correctly
 [] Game reinitializes globals correctly
+[] Game declares winner if all letters guessed correctly one after another
+[] Game declares loser if all letters guessed wrong one after another
+[] Game declares winner correctly if correct/incorrect guesses are interspersed
+[] Game declares loser correctly if correct/incorrect guesses are interspersed
+[] Game removes leading or trailing spaces from input
+[] Game rejects input with multiple characters 
+[] Game rejects input with non-alphabetic characters
+[] Game accepts and normalizes capital letters
 
 Display
 =======

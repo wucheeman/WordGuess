@@ -11,10 +11,10 @@
 [x] update Word to determine if it has been guessed and unittest
 [x] complete logic in Game with hard coded word 
    (x) declare end of game when won
-[-] validate/normalize user input
+[x] validate/normalize user input
    (x) removes leading or trailing spaces from input
    (x) Game accepts and normalizes capital letters
-   () rejects input with multiple characters 
+   (x) rejects input with multiple characters 
    (x) rejects input with non-alphabetic characters
 [] Game counts invalid input as an incorrect game and ends game when appropriate
 [] clean up logs

@@ -15,7 +15,7 @@ const dictionary = ['cat'];
 const Game = function(dictionary) { // remove dictionary as argument?
   this.dictionary = dictionary;
   this.word = {};
-  this.numGuesses = 3; // increase for testing; set to 10 for game?
+  this.numGuesses = 3; // TODO set to 10 for game
   this.gameOver = false;
   this.makeWordObject = function() {
     // makes an object using Word for this round of the game
@@ -47,7 +47,7 @@ const Game = function(dictionary) { // remove dictionary as argument?
           if (guessOutcome) {
             that.word.updateDisplayState();
             if (that.word.checkIfFullyGuessed()) {
-              console.log(' ' + this.word.currentDisplayState);
+              console.log(' ' + that.word.currentDisplayState);
               console.log("Congrats! You've guessed the word!");
               that.gameOver = true;
             }
@@ -71,7 +71,7 @@ const Game = function(dictionary) { // remove dictionary as argument?
     guess = guess.toLowerCase();
     // console.log('the input is normalized to: ' + guess);
     // console.log('alphabet.test(guess) says ' + alphabet.test(guess));
-    if (alphabet.test(guess)) {
+    if (alphabet.test(guess) && guess.length == 1) {
       return guess;
     } else {
       return ('');

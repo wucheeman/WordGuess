@@ -11,12 +11,20 @@
 [x] update Word to determine if it has been guessed and unittest
 [x] complete logic in Game with hard coded word 
    (x) declare end of game when won
-[] clean up logs and test with different hard coded word
+[-] validate/normalize user input
+   (x) removes leading or trailing spaces from input
+   (x) Game accepts and normalizes capital letters
+   () rejects input with multiple characters 
+   (x) rejects input with non-alphabetic characters
+[] Game counts invalid input as an incorrect game and ends game when appropriate
+[] clean up logs
+TEST with different hard coded word
 [] generate random word
-[] validate/normalize user input
+
 [] complete all work on index.js
+TEST
 [] update after test
-[] clean up and final test on this branch
+[] delint, clean up, and final test on main branch
 
 AFTER BRANCHING FOR ENHANCEMENT
 [] make word using random-words.js

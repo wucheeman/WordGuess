@@ -21,8 +21,8 @@ const Game = function(dictionary) { // remove dictionary as argument?
     // makes an object using Word for this round of the game
     // TODO make this a random pick
     this.word = new wordMaker(dictionary[0]);
-    console.log(this.word);
-  }
+    //console.log(this.word);
+  };
   this.playGame = function() {
     // main loop of the game
     const that = this; // TODO: use a less smelly fix to the scope issue
@@ -35,13 +35,13 @@ const Game = function(dictionary) { // remove dictionary as argument?
         name: 'guess'
       }])
       .then(function(inquirerResponse) {
-        const guess = inquirerResponse.guess.trim();
-        // need to validate and normalize user guess
-        // TODO: this is causing the game to loop infinitely, fix
-        // put validation into Word?
-        // if (!letter) {
-        //   // ask again
-        // } else {
+        let guess = inquirerResponse.guess.trim();
+        guess = that.validateAndNormalize(guess);
+        if (!guess) {
+          console.log('Please input a single letter only');
+          // TODO count an invalid guess - how does impact ending game?
+          that.playGame();  // go around again
+        } else {
           const guessOutcome = that.word.checkUserGuess(guess);
           console.log(guessOutcome);
           if (guessOutcome) {
@@ -61,24 +61,34 @@ const Game = function(dictionary) { // remove dictionary as argument?
           } else {
             that.playGame(); // recursion
           }
-//      }; end of commented-out if... else delete?
-      });
-    }; // end of if loop
+        } // end of else input is valid processing loop KEEP
+      }); // end of .then callback
+    } // end of if game not over loop
   }; // end of playGame method
+  this.validateAndNormalize = function(guess) {
+    // rejects multiple characters
+    const alphabet = /[a-z]/;
+    guess = guess.toLowerCase();
+    // console.log('the input is normalized to: ' + guess);
+    // console.log('alphabet.test(guess) says ' + alphabet.test(guess));
+    if (alphabet.test(guess)) {
+      return guess;
+    } else {
+      return ('');
+    }
+  };
   this.updateDisplay = function() {
     // updates display after each letter has been guessed
+    // TODO: unused: delete?
     console.log('this.word');
   };
   this.makeWordObject();
 } // end of Game
+// TODO: remove when unit test is complete
+//module.exports = Game;
 
 const game = new Game(dictionary); // remove dictionary as argument
 game.makeWordObject();
 game.playGame();
 
-
-// RESUME
-// build inquirer prompt, then show word and obscured word on screen, then get the loop going
-
-
-
+// RESUME: reject input with multiple characters

@@ -5,6 +5,7 @@
 //
 const Letter = require('../letter.js');
 const Word = require('../word.js');
+const Game = require('../index.js');
 
 // LETTER UNIT TESTS
 //==========================================================================
@@ -32,16 +33,16 @@ console.log("Expected: a ; actual: " + letter.getDisplayLetter() + '\n');
 // WORD UNIT TESTS
 //==========================================================================
 //
-const mysteryWord = new Word ('cat');
-// console.log(mysteryWord);
-console.log('');
+// const mysteryWord = new Word ('cat');
+// // console.log(mysteryWord);
+// console.log('');
 
-console.log('Accessing mysteryWord.letterArray');
-console.log("Expected: c, a, t; actual: " +
-             mysteryWord.letterArray[0].letter + ', ' +
-             mysteryWord.letterArray[1].letter + ', ' +
-             mysteryWord.letterArray[2].letter );
-console.log('');
+// console.log('Accessing mysteryWord.letterArray');
+// console.log("Expected: c, a, t; actual: " +
+//              mysteryWord.letterArray[0].letter + ', ' +
+//              mysteryWord.letterArray[1].letter + ', ' +
+//              mysteryWord.letterArray[2].letter );
+// console.log('');
 
 // console.log('Calling mysteryWord.checkUserGuess(a)');
 // const testLetterOne = new Letter('a');
@@ -96,23 +97,47 @@ console.log('');
 // console.log("Guessing letter d: " +  doubleEWord.currentDisplayState);
 // console.log('');
 
-console.log('Setting up test of checkIfFullyGuessed');
-mysteryWord.letterArray[0].guessed = false;
-mysteryWord.letterArray[1].guessed = false;
-mysteryWord.letterArray[2].guessed = true;
-console.log("Expected: false; actual: " + mysteryWord.checkIfFullyGuessed());
-console.log('');
+// console.log('Setting up test of checkIfFullyGuessed');
+// mysteryWord.letterArray[0].guessed = false;
+// mysteryWord.letterArray[1].guessed = false;
+// mysteryWord.letterArray[2].guessed = true;
+// console.log("Expected: false; actual: " + mysteryWord.checkIfFullyGuessed());
+// console.log('');
 
-console.log('Setting up 2nd test of checkIfFullyGuessed');
-mysteryWord.letterArray[0].guessed = true;
-mysteryWord.letterArray[1].guessed = false;
-mysteryWord.letterArray[2].guessed = true;
-console.log("Expected: false; actual: " + mysteryWord.checkIfFullyGuessed());
-console.log('');
+// console.log('Setting up 2nd test of checkIfFullyGuessed');
+// mysteryWord.letterArray[0].guessed = true;
+// mysteryWord.letterArray[1].guessed = false;
+// mysteryWord.letterArray[2].guessed = true;
+// console.log("Expected: false; actual: " + mysteryWord.checkIfFullyGuessed());
+// console.log('');
 
-console.log('Setting up 3rd test of checkIfFullyGuessed');
-mysteryWord.letterArray[0].guessed = true;
-mysteryWord.letterArray[1].guessed = true;
-mysteryWord.letterArray[2].guessed = true;
-console.log("Expected: true; actual: " + mysteryWord.checkIfFullyGuessed());
-console.log('');
+// console.log('Setting up 3rd test of checkIfFullyGuessed');
+// mysteryWord.letterArray[0].guessed = true;
+// mysteryWord.letterArray[1].guessed = true;
+// mysteryWord.letterArray[2].guessed = true;
+// console.log("Expected: true; actual: " + mysteryWord.checkIfFullyGuessed());
+// console.log('');
+
+// GAME UNIT TESTS
+//==========================================================================
+// 
+
+// *** REQUIRES that index.js be updated:
+//      - comment out code at bottom file that starts game up
+//      - adds 'module.exports = Game' at bottom of file
+
+const dictionary = ['cat'] // TODO remove?
+const game = new Game(dictionary);
+
+console.log('Testing validateAndNormalize(a)');
+console.log('Expected: true; actual: ' + game.validateAndNormalize('a'));
+console.log('Testing validateAndNormalize(A)');
+console.log('Expected: true; actual: ' + game.validateAndNormalize('A'));
+console.log('Testing validateAndNormalize(m)');
+console.log('Expected: true; actual: ' + game.validateAndNormalize('m'));
+console.log('Testing validateAndNormalize(X)');
+console.log('Expected: true; actual: ' + game.validateAndNormalize('X'));
+console.log('Testing validateAndNormalize(1)');
+console.log('Expected: false; actual: ' + game.validateAndNormalize('1'));
+console.log('Testing validateAndNormalize(,)');
+console.log('Expected: false; actual: ' + game.validateAndNormalize(','));

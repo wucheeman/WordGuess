@@ -40,6 +40,7 @@ Functionality
 =============
 [] Game initializes globals correctly
 [] Game reinitializes globals correctly
+[] All unit tests pass
 [] Game declares winner if all letters guessed correctly one after another
 [] Game declares loser if all letters guessed wrong one after another
 [] Game declares winner correctly if correct/incorrect guesses are interspersed

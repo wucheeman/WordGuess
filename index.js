@@ -19,6 +19,8 @@ const Game = function() {
   this.gameOver = false;
   this.makeWordObject = function() {
     this.word = new wordMaker(randomWord());
+    console.log(this.word.word);
+    // TODO comment out line above
   };
   this.playGame = function() {
     // main loop of the game

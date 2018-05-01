@@ -30,7 +30,6 @@ const Word = function(word) {
   this.checkUserGuess = function(letter) {
     let outcome = false;
     for (let letterObject of this.letterArray) {
-      // console.log('letter is ' + letter + "letterObject.letter is " + letterObject.letter);
       if (letterObject.letter === letter) {
         letterObject.guessed = true;
         outcome = true;

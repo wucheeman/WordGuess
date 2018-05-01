@@ -4,6 +4,7 @@
 // require inpuirer
 const inquirer = require('inquirer');
 const wordMaker = require('./word.js');
+// TODO (future)
 // npm install random-words - package generating a random word
 
 // Create dictionary
@@ -20,8 +21,7 @@ const Game = function(dictionary) { // remove dictionary as argument?
   this.makeWordObject = function() {
     // makes an object using Word for this round of the game
     // TODO make this a random pick
-    this.word = new wordMaker(dictionary[0]);
-    //console.log(this.word);
+    this.word = new wordMaker(dictionary[9]);
   };
   this.playGame = function() {
     // main loop of the game
@@ -31,7 +31,7 @@ const Game = function(dictionary) { // remove dictionary as argument?
       inquirer
       .prompt([{
         type: 'input',
-        message: 'Guess a letter please',
+        message: '\nGuess a letter please\n',
         name: 'guess'
       }])
       .then(function(inquirerResponse) {
@@ -42,7 +42,6 @@ const Game = function(dictionary) { // remove dictionary as argument?
           that.updateAfterBadGuess();
         } else {
           const guessOutcome = that.word.checkUserGuess(guess);
-          console.log(guessOutcome);
           if (guessOutcome) {
             that.word.updateDisplayState();
             if (that.word.checkIfFullyGuessed()) {
@@ -61,7 +60,7 @@ const Game = function(dictionary) { // remove dictionary as argument?
   }; // end of playGame method
   this.updateAfterBadGuess = function() {
     this.numGuesses--;
-    console.log(this.numGuesses);
+    console.log('You have ' + this.numGuesses + ' guesses left\n');
     if (this.numGuesses === 0) {
       console.log('Sorry, you have run out of guesses!');
       this.gameOver = true;
@@ -73,26 +72,17 @@ const Game = function(dictionary) { // remove dictionary as argument?
     // rejects multiple characters
     const alphabet = /[a-z]/;
     guess = guess.toLowerCase();
-    // console.log('the input is normalized to: ' + guess);
-    // console.log('alphabet.test(guess) says ' + alphabet.test(guess));
     if (alphabet.test(guess) && guess.length == 1) {
       return guess;
     } else {
       return ('');
     }
   };
-  this.updateDisplay = function() {
-    // updates display after each letter has been guessed
-    // TODO: unused: delete?
-    console.log('this.word');
-  };
   this.makeWordObject();
 } // end of Game
-// TODO: remove when unit test is complete
+// uncomment when needed for unit test
 //module.exports = Game;
 
-const game = new Game(dictionary); // remove dictionary as argument
+const game = new Game(dictionary); // remove dictionary as argument?
 game.makeWordObject();
 game.playGame();
-
-// RESUME: reject input with multiple characters

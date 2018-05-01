@@ -29,7 +29,8 @@ Requirements
 [] App has file index.js containing the logic for the course of the game.
   () Logic depends on word.js and nothing else
   () Logic randomly selects a word and uses the `Word` constructor to store it
-  () Logic prompts the user for each guess and keeps track of the user's remaining guesses
+  () Logic prompts the user for each guess
+  () Logic tracks the user's remaining guesses and displays them on each turn
 
 
 Bonus
@@ -45,10 +46,11 @@ Functionality
 [] Game declares loser if all letters guessed wrong one after another
 [] Game declares winner correctly if correct/incorrect guesses are interspersed
 [] Game declares loser correctly if correct/incorrect guesses are interspersed
+[] Game handles words with repeating letters correctly
 [] Game removes leading or trailing spaces from input
 [] Game rejects input with multiple characters 
 [] Game rejects input with non-alphabetic characters
-[] Game counts invalid input as an incorrect game and ends game when appropriate
+[] Game counts invalid input as an incorrect guess and ends game when appropriate
 [] Game accepts and normalizes capital letters
 [] Game treats a repeated guess correctly; does not update display or count guess as incorrect
 

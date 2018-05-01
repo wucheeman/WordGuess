@@ -30,7 +30,7 @@ const Game = function() {
       inquirer
       .prompt([{
         type: 'input',
-        message: '\nGuess a letter please\n',
+        message: '\nGuess a letter\n',
         name: 'guess'
       }])
       .then(function(inquirerResponse) {

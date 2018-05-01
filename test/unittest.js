@@ -127,17 +127,39 @@ console.log("Expected: a ; actual: " + letter.getDisplayLetter() + '\n');
 //      - adds 'module.exports = Game' at bottom of file
 
 const dictionary = ['cat'] // TODO remove?
-const game = new Game(dictionary);
+let game = new Game(dictionary);
 
-console.log('Testing validateAndNormalize(a)');
-console.log('Expected: true; actual: ' + game.validateAndNormalize('a'));
-console.log('Testing validateAndNormalize(A)');
-console.log('Expected: true; actual: ' + game.validateAndNormalize('A'));
-console.log('Testing validateAndNormalize(m)');
-console.log('Expected: true; actual: ' + game.validateAndNormalize('m'));
-console.log('Testing validateAndNormalize(X)');
-console.log('Expected: true; actual: ' + game.validateAndNormalize('X'));
-console.log('Testing validateAndNormalize(1)');
-console.log('Expected: false; actual: ' + game.validateAndNormalize('1'));
-console.log('Testing validateAndNormalize(,)');
-console.log('Expected: false; actual: ' + game.validateAndNormalize(','));
+console.log('Test #1 of random word generation. The next word is ' + game.word.word)
+game = new Game(dictionary);
+console.log('Test #2 of random word generation. The next word is ' + game.word.word)
+game = new Game(dictionary);
+console.log('Test #3 of random word generation. The next word is ' + game.word.word)
+game = new Game(dictionary);
+console.log('Test #4 of random word generation. The next word is ' + game.word.word)
+game = new Game(dictionary);
+console.log('Test #5 of random word generation. The next word is ' + game.word.word)
+game = new Game(dictionary);
+console.log('Test #6 of random word generation. The next word is ' + game.word.word)
+game = new Game(dictionary);
+console.log('Test #7 of random word generation. The next word is ' + game.word.word)
+game = new Game(dictionary);
+console.log('Test #8 of random word generation. The next word is ' + game.word.word)
+game = new Game(dictionary);
+console.log('Test #9 of random word generation. The next word is ' + game.word.word)
+game = new Game(dictionary);
+console.log('Test #10 of random word generation. The next word is ' + game.word.word)
+
+
+
+// console.log('Testing validateAndNormalize(a)');
+// console.log('Expected: true; actual: ' + game.validateAndNormalize('a'));
+// console.log('Testing validateAndNormalize(A)');
+// console.log('Expected: true; actual: ' + game.validateAndNormalize('A'));
+// console.log('Testing validateAndNormalize(m)');
+// console.log('Expected: true; actual: ' + game.validateAndNormalize('m'));
+// console.log('Testing validateAndNormalize(X)');
+// console.log('Expected: true; actual: ' + game.validateAndNormalize('X'));
+// console.log('Testing validateAndNormalize(1)');
+// console.log('Expected: false; actual: ' + game.validateAndNormalize('1'));
+// console.log('Testing validateAndNormalize(,)');
+// console.log('Expected: false; actual: ' + game.validateAndNormalize(','));

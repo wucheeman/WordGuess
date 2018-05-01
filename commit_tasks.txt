@@ -22,7 +22,10 @@
 [x] generate random word
 [x] complete all work on index.js
 TEST
-[] update after test
+[x] Bug fix: Word now handles words with repeating letters correctly
+[] Bug fix: Game (Word?) treats a repeated guess correctly; does not update display or count guess as incorrect; should tell user it is a repeat
+and tells user guess is a repeat
+[] Bug fix: Game displays number of wrong guesses left on prompt after a successful guess as well as a bad guess
 [] delint, clean up, and final test on main branch
 
 AFTER BRANCHING FOR ENHANCEMENT

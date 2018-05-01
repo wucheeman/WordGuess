@@ -34,7 +34,6 @@ const Word = function(word) {
         letterObject.guessed = true;
         outcome = true;
         this.updateDisplayState();
-        return outcome;
       }
     }
     return outcome;

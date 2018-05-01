@@ -1,16 +1,11 @@
 // @ts-check
 // This turns on type checking in VS Code
 
-// require inpuirer
 const inquirer = require('inquirer');
 const wordMaker = require('./word.js');
 // TODO (future)
 // npm install random-words - package generating a random word
 
-// Create dictionary
-// TODO: extend dictionary
-// TODO: use file to hold big dictionary or try random-word
-// console.log(randomWords());
 const dictionary = ['cat', 'activities', 'sleep', 'studying', 'eating', 'drinking', 'walk', 'running', 'swimming', 'fly', 'drive', 'listen', 'thinking', 'sneezing', 'cough', 'disagree', 'diving', 'skiing', 'sledding', 'climb', 'bat', 'battlement', 'lemming', 'zebra', 'automobile', 'computer', 'shown', 'background', 'game', 'mother', 'all', 'showcase', 'essentially', 'elements', 'modern', 'personal', 'computing', 'including', 'mouse', 'windows', 'video', 'conferencing', 'organizing', 'talent', 'behind', 'famous', 'polymath', 'two', 'inventors', 'calculus', 'area', 'critical', 'study', 'magnetism', 'binary', 'numbers', 'electricity', 'phosphorescence', 'programming', 'found', 'company', 'later', 'grew', 'produced', 'tabulating', 'machinery', 'process',' data', 'record', 'punched', 'cards', 'direct', 'precursor', 'important', 'way', 'compiling', 'railroad', 'timetable', 'census', 'counting', 'vote', 'congress', 'controlling', 'immigration', 'quotas', 'running', 'factory', 'mathematician', 'cryptographer', 'language', 'complete', 'hogwash', 'specialized', 'code', 'break', 'incomprehensible', 'infinite', 'paper', 'tapes', 'many', 'people', 'enjoy', 'without', 'knowing', 'debt', 'apple', 'bell', 'one', 'foremost', 'pioneers', 'control', 'weaving', 'looms', 'art', 'works', 'draft', 'soldiers', 'canal', 'gates', 'history', 'analytic', 'engine', 'intended', 'numbers', 'play', 'solitaire', 'ballistic', 'trajectories', 'money', 'trained', 'poet', 'foresaw', 'virtual', 'accident', 'fundamental', 'architecture', 'manage', 'early', 'projects'];
 
 const randomWord = () => {
@@ -18,14 +13,11 @@ const randomWord = () => {
   return dictionary[randomIndex];
 }
 
-const Game = function(dictionary) { // remove dictionary as argument?
-  this.dictionary = dictionary;
+const Game = function() {
   this.word = {};
   this.numGuesses = 3; // TODO set to 10 for game
   this.gameOver = false;
   this.makeWordObject = function() {
-    // makes an object using Word for this round of the game
-    // TODO make this a random pick
     this.word = new wordMaker(randomWord());
   };
   this.playGame = function() {
@@ -86,9 +78,8 @@ const Game = function(dictionary) { // remove dictionary as argument?
   this.makeWordObject();
 } // end of Game
 // uncomment when needed for unit test
-module.exports = Game;
+// module.exports = Game;
 
 // comment out when unit testing
-// const game = new Game(dictionary); // remove dictionary as argument?
-//game.makeWordObject(); // TODO delete - not needed
-// game.playGame();
+const game = new Game(); // remove dictionary as argument?
+game.playGame();

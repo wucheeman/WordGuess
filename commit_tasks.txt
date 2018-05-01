@@ -19,8 +19,8 @@
 [x] Game counts invalid input as an incorrect game and ends when appropriate
 [x] Refactor bad guess/game loss code into separate method
 [x] clean up logs and test with different hard coded word
-[] generate random word
-[] complete all work on index.js
+[x] generate random word
+[x] complete all work on index.js
 TEST
 [] update after test
 [] delint, clean up, and final test on main branch

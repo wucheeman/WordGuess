@@ -27,7 +27,7 @@ TEST
 and tells user guess is a repeat
 [x] Bug fix: Game displays number of wrong guesses left on prompt after a successful guess as well as a bad guess
 [x] Delinted, and second-pass clean up
-[] final test on main branch
+[x] final tests on main branch
 
 AFTER BRANCHING FOR ENHANCEMENT
 [] make word using random-words.js

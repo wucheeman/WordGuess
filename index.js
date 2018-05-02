@@ -20,8 +20,8 @@ const Game = function() {
   this.alreadyGuessed = [];
   this.makeWordObject = function() {
     this.word = new wordMaker(randomWord());
-    console.log(this.word.word);
-    // TODO comment out line above
+    // console.log(this.word.word);
+    // uncomment line above for UI test
   };
   this.playGame = function() {
     // main loop of the game
@@ -51,7 +51,7 @@ const Game = function() {
                 that.word.updateDisplayState();
                 if (that.word.checkIfFullyGuessed()) {
                   console.log(' ' + that.word.currentDisplayState);
-                  console.log("Congrats! You've guessed the word!");
+                  console.log("\nCongrats! You've guessed the word!");
                   that.gameOver = true;
                 } else {
                   that.playGame(); // recursion

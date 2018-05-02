@@ -17,6 +17,7 @@ const Game = function() {
   this.word = {};
   this.numGuesses = 3; // TODO set to 10 for game
   this.gameOver = false;
+  this.alreadyGuessed = [];
   this.makeWordObject = function() {
     this.word = new wordMaker(randomWord());
     console.log(this.word.word);
@@ -30,36 +31,44 @@ const Game = function() {
       inquirer
       .prompt([{
         type: 'input',
-        message: '\nGuess a letter\n',
+        message: '\nGuess a letter. You have ' + this.numGuesses + ' bad guesses left\n',
         name: 'guess'
       }])
       .then(function(inquirerResponse) {
         let guess = inquirerResponse.guess.trim();
         guess = that.validateAndNormalize(guess);
         if (!guess) {
-          console.log('Please input a single letter only');
+          console.log('Please input a single letter only\n');
           that.updateAfterBadGuess();
         } else {
-          const guessOutcome = that.word.checkUserGuess(guess);
-          if (guessOutcome) {
-            that.word.updateDisplayState();
-            if (that.word.checkIfFullyGuessed()) {
-              console.log(' ' + that.word.currentDisplayState);
-              console.log("Congrats! You've guessed the word!");
-              that.gameOver = true;
-            } else {
-              that.playGame(); // recursion
-            }
-          } else {
+          if (that.alreadyGuessed.includes(guess)) {
+            console.log('You guessed that already!');
             that.updateAfterBadGuess();
-          }
+          } else {
+            console.log('letter was guessed for the first time');
+            that.alreadyGuessed.push(guess);
+            const guessOutcome = that.word.checkUserGuess(guess);
+            console.log('checking guess');
+            if (guessOutcome) {
+              that.word.updateDisplayState();
+              if (that.word.checkIfFullyGuessed()) {
+                console.log(' ' + that.word.currentDisplayState);
+                console.log("Congrats! You've guessed the word!");
+                that.gameOver = true;
+              } else {
+                that.playGame(); // recursion
+              }
+            } else {
+              that.updateAfterBadGuess();
+            }
+          } // end of else that processes first time letter is guessed
         } // end of else input is valid processing loop KEEP
       }); // end of .then callback
     } // end of if game not over loop
   }; // end of playGame method
   this.updateAfterBadGuess = function() {
     this.numGuesses--;
-    console.log('You have ' + this.numGuesses + ' guesses left\n');
+    // console.log('You have ' + this.numGuesses + ' guesses left\n');
     if (this.numGuesses === 0) {
       console.log('Sorry, you have run out of guesses!');
       this.gameOver = true;

@@ -52,7 +52,7 @@ Functionality
 [] Game rejects input with non-alphabetic characters
 [] Game counts invalid input as an incorrect guess and ends game when appropriate
 [] Game accepts and normalizes capital letters
-[] Game treats a repeated guess correctly; does not update display or count guess as incorrect
+[] Game treats a repeated guess correctly; does not update display and counts guess as incorrect
 
 Display
 =======

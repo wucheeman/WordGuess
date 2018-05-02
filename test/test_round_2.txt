@@ -1,0 +1,68 @@
+RESULTS FOR WORD GUESS TEST, ROUND TWO
+
+d = deferred
+e = met by enhancement
+f = failed
+p = passed
+s = skipped
+w = waiting for further work
+
+Make sure you're working in a copy of this for a homework assignment! 
+
+Requirements
+============
+[p] Use inquirer.js for user input
+[p] App has file letter.js containing a constructor, Letter.
+  (p) Constructor has no dependencies
+  (p) Constructor displays an alphabetic character or an underscore, depending on whether or not the user has guessed the letter.
+  (p) Constructor defines a string value to store the underlying character for the letter
+  (p) Constructor defines boolean value that stores whether that letter has been guessed yet
+  (p) Constructor defines method that returns the underlying character if the letter has been guessed, or underscore if not
+  (p) Constructor defines method that takes a character as an argument and checks it against the underlying character, updating the stored boolean value to true if guessed correctly
+[p] App has file word.js containing a constructor, Word.
+  (p) Constructor depends on letter.js and nothing else
+  (p) Constructor creates an object representing the word the user is to guess. 
+  (p) Constructor defines an array of Letter objects representing the letters of the word
+  (p) Constructor defines a method that returns a string representing the word.
+  (p) This method calls each letter object's method that displays the character or an underscore and concatenates the response.
+  (p) Constructor defines a method that takes a character as an argument and calls the letter object's method for guessing the value on each letter object
+[p] App has file index.js containing the logic for the course of the game.
+  (p) Logic depends on word.js and nothing else
+  () Logic randomly selects a word and uses the `Word` constructor to store it
+  (p) Logic prompts the user for each guess
+  (p) Logic tracks the user's remaining guesses and displays them on each turn
+
+
+Bonus
+=====
+None
+
+Functionality
+=============
+[p] Game initializes globals correctly
+[p] Game reinitializes globals correctly
+[p] All unit tests pass
+[p] Game declares winner if all letters guessed correctly one after another
+[p] Game declares loser if all letters guessed wrong one after another
+[p] Game declares winner correctly if correct/incorrect guesses are interspersed
+[p] Game declares loser correctly if correct/incorrect guesses are interspersed
+[p] Game handles words with repeating letters correctly
+[p] Game removes leading or trailing spaces from input
+[p] Game rejects input with multiple characters 
+[p] Game rejects input with non-alphabetic characters
+[p] Game counts invalid input as an incorrect guess and ends game when appropriate
+[p] Game accepts and normalizes capital letters
+[p] Game treats a repeated guess correctly; does not update display and counts guess as incorrect
+
+Display
+=======
+[p] Page closely resembles demo gif
+
+Installation
+============
+[d] Package installs correctly in a new directory
+[f] package.json correctly reflects app dependencies
+
+Cleanup
+=======
+[p] JS delinted

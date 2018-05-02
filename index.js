@@ -68,7 +68,8 @@ const Game = function() {
   this.updateAfterBadGuess = function() {
     this.numGuesses--;
     if (this.numGuesses === 0) {
-      console.log('Sorry, you have run out of guesses!');
+      console.log('Sorry, you have run out of guesses!\n');
+      console.log('The mystery word was ' + this.word.word);
       this.gameOver = true;
     } else {
       this.playGame(); // recursion

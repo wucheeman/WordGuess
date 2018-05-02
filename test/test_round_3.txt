@@ -1,0 +1,8 @@
+RESULTS FOR WORD GUESS TEST, ROUND THREE
+
+Only failed or deferred test cases were covered.
+
+Installation
+============
+[p] Package installs correctly in a new directory
+[p] package.json correctly reflects app dependencies

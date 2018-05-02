@@ -20,5 +20,7 @@
     "url": "https://github.com/wucheeman/WordGuess/issues"
   },
   "homepage": "https://github.com/wucheeman/WordGuess#readme",
-  "dependencies": {}
+  "dependencies": {
+    "inquirer": "^5.2.0"
+  }
 }

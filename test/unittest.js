@@ -9,48 +9,48 @@ const Game = require('../index.js');
 
 // LETTER UNIT TESTS
 //==========================================================================
-/*
-console.log(typeof Letter);
 
-const letter = new Letter('a');
-console.log(letter);
-console.log();
+// console.log(typeof Letter);
 
-console.log("Calling letter.getDisplayLetter()");
-console.log("Expected: _ ; actual: " + letter.getDisplayLetter() + '\n');
+// const letter = new Letter('a');
+// console.log(letter);
+// console.log();
 
-console.log("Calling letter.checkGuess('b')");
-letter.checkGuess('b');
-console.log("Calling letter.getDisplayLetter()");
-console.log("Expected: _ ; actual: " + letter.getDisplayLetter() + '\n');
+// console.log("Calling letter.getDisplayLetter()");
+// console.log("Expected: _ ; actual: " + letter.getDisplayLetter() + '\n');
 
-console.log("Calling letter.checkGuess('a')");
-letter.checkGuess('a');
-console.log("Calling letter.getDisplayLetter('a')");
-console.log("Expected: a ; actual: " + letter.getDisplayLetter() + '\n');
-*/
+// console.log("Calling letter.checkGuess('b')");
+// letter.checkGuess('b');
+// console.log("Calling letter.getDisplayLetter()");
+// console.log("Expected: _ ; actual: " + letter.getDisplayLetter() + '\n');
+
+// console.log("Calling letter.checkGuess('a')");
+// letter.checkGuess('a');
+// console.log("Calling letter.getDisplayLetter('a')");
+// console.log("Expected: a ; actual: " + letter.getDisplayLetter() + '\n');
+
 
 // WORD UNIT TESTS
 //==========================================================================
 //
-// const mysteryWord = new Word ('cat');
-// // console.log(mysteryWord);
-// console.log('');
+const mysteryWord = new Word ('cat');
+// console.log(mysteryWord);
+console.log('');
 
-// console.log('Accessing mysteryWord.letterArray');
-// console.log("Expected: c, a, t; actual: " +
-//              mysteryWord.letterArray[0].letter + ', ' +
-//              mysteryWord.letterArray[1].letter + ', ' +
-//              mysteryWord.letterArray[2].letter );
-// console.log('');
+console.log('Accessing mysteryWord.letterArray');
+console.log("Expected: c, a, t; actual: " +
+             mysteryWord.letterArray[0].letter + ', ' +
+             mysteryWord.letterArray[1].letter + ', ' +
+             mysteryWord.letterArray[2].letter );
+console.log('');
 
-// console.log('Calling mysteryWord.checkUserGuess(a)');
-// const testLetterOne = new Letter('a');
-// console.log("Expected: true; actual: " + mysteryWord.checkUserGuess(testLetterOne));
-// console.log('Calling mysteryWord.checkUserGuess(z)');
-// const testLetterTwo = new Letter('z')
-// console.log("Expected: false; actual: " + mysteryWord.checkUserGuess(testLetterTwo));
-// console.log('');
+console.log('Calling mysteryWord.checkUserGuess(a)');
+const testLetterOne = new Letter('a');
+console.log("Expected: true; actual: " + mysteryWord.checkUserGuess(testLetterOne.letter));
+console.log('Calling mysteryWord.checkUserGuess(z)');
+const testLetterTwo = new Letter('z')
+console.log("Expected: false; actual: " + mysteryWord.checkUserGuess(testLetterTwo.letter));
+console.log('');
 
 // console.log('Testing for word with two of the same letter');
 // const doubleEWord = new Word ('evidence');
@@ -126,27 +126,27 @@ console.log("Expected: a ; actual: " + letter.getDisplayLetter() + '\n');
 //      - comment out code at bottom file that starts game up
 //      - adds 'module.exports = Game' at bottom of file
 
-let game = new Game();
+// let game = new Game();
 
-console.log('Test #1 of random word generation. The next word is ' + game.word.word)
-game = new Game();
-console.log('Test #2 of random word generation. The next word is ' + game.word.word)
-game = new Game();
-console.log('Test #3 of random word generation. The next word is ' + game.word.word)
-game = new Game();
-console.log('Test #4 of random word generation. The next word is ' + game.word.word)
-game = new Game();
-console.log('Test #5 of random word generation. The next word is ' + game.word.word)
-game = new Game();
-console.log('Test #6 of random word generation. The next word is ' + game.word.word)
-game = new Game();
-console.log('Test #7 of random word generation. The next word is ' + game.word.word)
-game = new Game();
-console.log('Test #8 of random word generation. The next word is ' + game.word.word)
-game = new Game();
-console.log('Test #9 of random word generation. The next word is ' + game.word.word)
-game = new Game();
-console.log('Test #10 of random word generation. The next word is ' + game.word.word)
+// console.log('Test #1 of random word generation. The next word is ' + game.word.word)
+// game = new Game();
+// console.log('Test #2 of random word generation. The next word is ' + game.word.word)
+// game = new Game();
+// console.log('Test #3 of random word generation. The next word is ' + game.word.word)
+// game = new Game();
+// console.log('Test #4 of random word generation. The next word is ' + game.word.word)
+// game = new Game();
+// console.log('Test #5 of random word generation. The next word is ' + game.word.word)
+// game = new Game();
+// console.log('Test #6 of random word generation. The next word is ' + game.word.word)
+// game = new Game();
+// console.log('Test #7 of random word generation. The next word is ' + game.word.word)
+// game = new Game();
+// console.log('Test #8 of random word generation. The next word is ' + game.word.word)
+// game = new Game();
+// console.log('Test #9 of random word generation. The next word is ' + game.word.word)
+// game = new Game();
+// console.log('Test #10 of random word generation. The next word is ' + game.word.word)
 
 
 

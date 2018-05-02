@@ -25,50 +25,48 @@ const Game = function() {
   };
   this.playGame = function() {
     // main loop of the game
-    const that = this; // TODO: use a less smelly fix to the scope issue
+    const that = this; // TODO: (future) use a less smelly fix to the scope issue
     if (!this.gameOver ) {
-      console.log(' ' + this.word.currentDisplayState);
+      console.log(' ' + this.word.currentDisplayState + '\n');
       inquirer
-      .prompt([{
-        type: 'input',
-        message: '\nGuess a letter. You have ' + this.numGuesses + ' bad guesses left\n',
-        name: 'guess'
-      }])
-      .then(function(inquirerResponse) {
-        let guess = inquirerResponse.guess.trim();
-        guess = that.validateAndNormalize(guess);
-        if (!guess) {
-          console.log('Please input a single letter only\n');
-          that.updateAfterBadGuess();
-        } else {
-          if (that.alreadyGuessed.includes(guess)) {
-            console.log('You guessed that already!');
+        .prompt([{
+          type: 'input',
+          message: 'Guess a letter. You have ' + this.numGuesses + ' bad guesses left.\n\n',
+          name: 'guess'
+        }])
+        .then(function(inquirerResponse) {
+          let guess = inquirerResponse.guess.trim();
+          guess = that.validateAndNormalize(guess);
+          if (!guess) {
+            console.log('\nI only accept single letters as input!\n');
             that.updateAfterBadGuess();
           } else {
-            console.log('letter was guessed for the first time');
-            that.alreadyGuessed.push(guess);
-            const guessOutcome = that.word.checkUserGuess(guess);
-            console.log('checking guess');
-            if (guessOutcome) {
-              that.word.updateDisplayState();
-              if (that.word.checkIfFullyGuessed()) {
-                console.log(' ' + that.word.currentDisplayState);
-                console.log("Congrats! You've guessed the word!");
-                that.gameOver = true;
-              } else {
-                that.playGame(); // recursion
-              }
-            } else {
+            if (that.alreadyGuessed.includes(guess)) {
+              console.log('\nYou guessed that already!\n');
               that.updateAfterBadGuess();
-            }
-          } // end of else that processes first time letter is guessed
-        } // end of else input is valid processing loop KEEP
-      }); // end of .then callback
+            } else {
+              that.alreadyGuessed.push(guess);
+              const guessOutcome = that.word.checkUserGuess(guess);
+              if (guessOutcome) {
+                that.word.updateDisplayState();
+                if (that.word.checkIfFullyGuessed()) {
+                  console.log(' ' + that.word.currentDisplayState);
+                  console.log("Congrats! You've guessed the word!");
+                  that.gameOver = true;
+                } else {
+                  that.playGame(); // recursion
+                }
+              } else {
+                console.log('\nThat letter is not in the word!\n');
+                that.updateAfterBadGuess();
+              }
+            } // end of else that processes first time letter is guessed
+          } // end of else input is valid processing loop KEEP
+        }); // end of .then callback
     } // end of if game not over loop
   }; // end of playGame method
   this.updateAfterBadGuess = function() {
     this.numGuesses--;
-    // console.log('You have ' + this.numGuesses + ' guesses left\n');
     if (this.numGuesses === 0) {
       console.log('Sorry, you have run out of guesses!');
       this.gameOver = true;
@@ -92,5 +90,5 @@ const Game = function() {
 // module.exports = Game;
 
 // comment out when unit testing
-const game = new Game(); // remove dictionary as argument?
+const game = new Game();
 game.playGame();

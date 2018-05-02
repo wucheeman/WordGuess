@@ -52,48 +52,51 @@ console.log('');
 // console.log("Expected: false; actual: " + mysteryWord.checkUserGuess(testLetterTwo.letter));
 // console.log('');
 
-console.log('Testing for word with two of the same letter');
+// console.log('Testing for word with two of the same letter');
 const doubleEWord = new Word ('evidence');
-console.log(doubleEWord);
-const testLetterThree = new Letter('e')
-console.log("Expected: true; actual: " + doubleEWord.checkUserGuess(testLetterThree.letter));
-console.log('');
+// console.log(doubleEWord);
+// const testLetterThree = new Letter('e')
+// console.log("Expected: true; actual: " + doubleEWord.checkUserGuess(testLetterThree.letter));
+// console.log('');
 
 // console.log('Testing mysteryWord.getWord(c)');
 // const letterC = new Letter('c');
-// mysteryWord.checkUserGuess(letterC);
+// mysteryWord.checkUserGuess(letterC.letter);
 // console.log("Expected: c _ _ ; actual: " +  mysteryWord.currentDisplayState);
 // console.log('Testing mysteryWord.getWord(t)');
 // const letterT = new Letter('t');
-// mysteryWord.checkUserGuess(letterT);
+// mysteryWord.checkUserGuess(letterT.letter);
 // console.log("Expected: c _ t ; actual: " +  mysteryWord.currentDisplayState);
 // const letterA = new Letter('a');
-// mysteryWord.checkUserGuess(letterA);
+// mysteryWord.checkUserGuess(letterA.letter);
 // console.log("Expected: c a t ; actual: " +  mysteryWord.currentDisplayState);
 // console.log("");
 
 // console.log('Testing again for word with two of the same letter');
 // console.log("Testing starting display state: " +  doubleEWord.currentDisplayState);
-// doubleEWord.checkUserGuess(letterC);
+// const letterC = new Letter('c');
+// doubleEWord.checkUserGuess(letterC.letter);
 // console.log("Guessing letter c: " +  doubleEWord.currentDisplayState);
 // const letterE = new Letter('e');
-// doubleEWord.checkUserGuess(letterE);
+// doubleEWord.checkUserGuess(letterE.letter);
 // console.log("Guessing letter e: " +  doubleEWord.currentDisplayState);
-// mysteryWord.checkUserGuess(letterT);
+// const letterT = new Letter('t');
+// mysteryWord.checkUserGuess(letterT.letter);
 // console.log("Guessing letter t: " +  doubleEWord.currentDisplayState);
-// mysteryWord.checkUserGuess(letterA);
+// const letterA = new Letter('a');
+// mysteryWord.checkUserGuess(letterA.letter);
 // console.log("Guessing letter a: " +  doubleEWord.currentDisplayState);
 // const letterN = new Letter('n');
-// doubleEWord.checkUserGuess(letterN);
+// doubleEWord.checkUserGuess(letterN.letter);
 // console.log("Guessing letter n: " +  doubleEWord.currentDisplayState);
 // const letterV = new Letter('v');
-// doubleEWord.checkUserGuess(letterV);
+// doubleEWord.checkUserGuess(letterV.letter);
 // console.log("Guessing letter v: " +  doubleEWord.currentDisplayState);
 // const letterI = new Letter('i');
-// doubleEWord.checkUserGuess(letterI);
+// doubleEWord.checkUserGuess(letterI.letter);
 // console.log("Guessing letter i: " +  doubleEWord.currentDisplayState);
 // const letterD = new Letter('d');
-// doubleEWord.checkUserGuess(letterD);
+// doubleEWord.checkUserGuess(letterD.letter);
 // console.log("Guessing letter d: " +  doubleEWord.currentDisplayState);
 // console.log('');
 
@@ -126,7 +129,7 @@ console.log('');
 //      - comment out code at bottom file that starts game up
 //      - adds 'module.exports = Game' at bottom of file
 
-// let game = new Game();
+let game = new Game();
 
 // console.log('Test #1 of random word generation. The next word is ' + game.word.word)
 // game = new Game();
@@ -150,15 +153,15 @@ console.log('');
 
 
 
-// console.log('Testing validateAndNormalize(a)');
-// console.log('Expected: true; actual: ' + game.validateAndNormalize('a'));
-// console.log('Testing validateAndNormalize(A)');
-// console.log('Expected: true; actual: ' + game.validateAndNormalize('A'));
-// console.log('Testing validateAndNormalize(m)');
-// console.log('Expected: true; actual: ' + game.validateAndNormalize('m'));
-// console.log('Testing validateAndNormalize(X)');
-// console.log('Expected: true; actual: ' + game.validateAndNormalize('X'));
-// console.log('Testing validateAndNormalize(1)');
-// console.log('Expected: false; actual: ' + game.validateAndNormalize('1'));
-// console.log('Testing validateAndNormalize(,)');
-// console.log('Expected: false; actual: ' + game.validateAndNormalize(','));
+console.log('Testing validateAndNormalize(a)');
+console.log('Expected: a; actual: ' + game.validateAndNormalize('a'));
+console.log('Testing validateAndNormalize(A)');
+console.log('Expected: a; actual: ' + game.validateAndNormalize('A'));
+console.log('Testing validateAndNormalize(m)');
+console.log('Expected: m; actual: ' + game.validateAndNormalize('m'));
+console.log('Testing validateAndNormalize(X)');
+console.log('Expected: x; actual: ' + game.validateAndNormalize('X'));
+console.log('Testing validateAndNormalize(1)');
+console.log('Expected: \'\'; actual: ' + game.validateAndNormalize('1'));
+console.log('Testing validateAndNormalize(,)');
+console.log('Expected: \'\'; actual: ' + game.validateAndNormalize(','));

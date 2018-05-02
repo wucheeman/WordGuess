@@ -10,7 +10,7 @@ const Letter = require('./letter.js');
 const Word = function(word) {
   this.word = word; // not sure if this is needed
   this.letterArray = [];
-  this.currentDisplayState = '';
+  this.currentDisplayState = '\n';
   this.guessed = false;
   this.makeLetterArray = function() {
     // creates array of Letter objects matching word

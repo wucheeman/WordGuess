@@ -37,27 +37,27 @@ const mysteryWord = new Word ('cat');
 // console.log(mysteryWord);
 console.log('');
 
-console.log('Accessing mysteryWord.letterArray');
-console.log("Expected: c, a, t; actual: " +
-             mysteryWord.letterArray[0].letter + ', ' +
-             mysteryWord.letterArray[1].letter + ', ' +
-             mysteryWord.letterArray[2].letter );
-console.log('');
-
-console.log('Calling mysteryWord.checkUserGuess(a)');
-const testLetterOne = new Letter('a');
-console.log("Expected: true; actual: " + mysteryWord.checkUserGuess(testLetterOne.letter));
-console.log('Calling mysteryWord.checkUserGuess(z)');
-const testLetterTwo = new Letter('z')
-console.log("Expected: false; actual: " + mysteryWord.checkUserGuess(testLetterTwo.letter));
-console.log('');
-
-// console.log('Testing for word with two of the same letter');
-// const doubleEWord = new Word ('evidence');
-// console.log(doubleEWord);
-// const testLetterThree = new Letter('e')
-// console.log("Expected: true; actual: " + doubleEWord.checkUserGuess(testLetterThree));
+// console.log('Accessing mysteryWord.letterArray');
+// console.log("Expected: c, a, t; actual: " +
+//              mysteryWord.letterArray[0].letter + ', ' +
+//              mysteryWord.letterArray[1].letter + ', ' +
+//              mysteryWord.letterArray[2].letter );
 // console.log('');
+
+// console.log('Calling mysteryWord.checkUserGuess(a)');
+// const testLetterOne = new Letter('a');
+// console.log("Expected: true; actual: " + mysteryWord.checkUserGuess(testLetterOne.letter));
+// console.log('Calling mysteryWord.checkUserGuess(z)');
+// const testLetterTwo = new Letter('z')
+// console.log("Expected: false; actual: " + mysteryWord.checkUserGuess(testLetterTwo.letter));
+// console.log('');
+
+console.log('Testing for word with two of the same letter');
+const doubleEWord = new Word ('evidence');
+console.log(doubleEWord);
+const testLetterThree = new Letter('e')
+console.log("Expected: true; actual: " + doubleEWord.checkUserGuess(testLetterThree.letter));
+console.log('');
 
 // console.log('Testing mysteryWord.getWord(c)');
 // const letterC = new Letter('c');

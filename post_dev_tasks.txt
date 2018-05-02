@@ -8,10 +8,10 @@ Create a README
 
 Add To GitHub and More
 ======================
-[] Add the game to your portfolio via an active link and update GitHub.
-[] Confirm updated portfolio in GitHub Pages is accessible and no issues
+[x] Add the game to your portfolio via an active link and update GitHub.
+[x] Confirm updated portfolio in GitHub Pages is accessible and no issues
 
 Submit Homework
 ===============
-[] Provide link to GitHub repo in BCS
-[] Provide link to updated portfolio in the comments section of your homework.
+[x] Provide link to GitHub repo in BCS
+[x] Provide link to updated portfolio in the comments section of your homework.
